@@ -16,10 +16,16 @@ class Controller
 		} else {
 			$page = 1;
 		}
-		$pageCount = $booksModel->getPageCount();
-		$books = $booksModel->getPageBooks($page);
+		if (isset($_GET['search'])) {
+			$search = htmlspecialchars($_GET['search']);
+		} else {
+			$search = '';
+		}
+
+		$pageCount = $booksModel->getPageCount($search);
+		$books = $booksModel->getPageBooks($page, $search);
 		$view = new ViewsBooks();
-		$view->display($books, $pageCount, $page);
+		$view->display($books, $pageCount, $page, $search);
 	}
 
 	public function book($id) {

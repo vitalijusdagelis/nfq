@@ -4,6 +4,10 @@ if (!$books) {
 	echo "Knygų nėra.";
 } else {
 ?>
+<form action="index.php" method="get">
+	<input type="text" name="search">
+	<input type="submit" value="Ieškoti">
+</form>
 <table class="table table-striped">
 <?php
 foreach ($books as $book) {
