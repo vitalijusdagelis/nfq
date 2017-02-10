@@ -1,7 +1,7 @@
 <?php
 class ModelsBooks
 {
-	public function getPageBooks($pageNumber, $search) {
+	public function getPageBooks($pageNumber = 1, $search) {
 		if ($pageNumber <=0) {
 			return false;
 		}
@@ -10,7 +10,7 @@ class ModelsBooks
 		if ($search) {
 			$sql.= " WHERE name LIKE '%".$search."%'";
 		}
-		$sql.= ' LIMIT '.(($pageNumber - 1) * $booksPerPage + 1).','.$booksPerPage;
+		$sql.= ' LIMIT '.(($pageNumber - 1) * $booksPerPage).','.$booksPerPage;
 		$books = Db::select($sql);
 		$modelBook = new ModelsBook();
 		foreach ($books as $key => $value) {
