@@ -1,22 +1,31 @@
 <?php
 include('header.php');
-var_dump($author);
 ?>
-<table class="table table-striped">
-	
-	<tr>
-		<td>Pavadinimas</td>
-		<td>Leidimo metai</td>
-		<td>Autorius</td>
-		<td>Žanras</td>
-	</tr>
-	<tr>
-		<td><?php echo $book['book_name']; ?></td>
-		<td><?php echo $book['book_year']; ?></td>
-		<!-- ar gerai taip daryti tarpa? -->
-		<td><?php echo $author['last_name']." ".$author['first_name']; ?></td>
-		<td><?php echo $genre['name'] ?></td>
-	</tr>
-</table>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-2">Pavadinimas</div>
+		<div class="col-sm-10"><strong><?php echo $book['book_name']; ?></strong></div>
+	</div>
+	<div class="row">
+		<div class="col-sm-2">Leidimo metai</div>
+		<div class="col-sm-10"><?php echo $book['book_year']; ?></div>
+	</div>
+	<div class="row">
+		<div class="col-sm-2">Autorius</div>
+		<div class="col-sm-10">
+		<?php 
+			foreach ($authors as $author) {
+				echo "<div>";
+				echo $author['last_name']." ".$author['first_name']; 
+				echo "</div>";
+			} 
+		?>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-2">Žanras</div>
+		<div class="col-sm-10"><?php echo $genre['name'] ?></div>
+	</div>
+</div>
 <?php
 include('footer.php');

@@ -11,17 +11,23 @@ class Controller
 	
 	public function books() {
 		$booksModel = new ModelsBooks();
-		$books = $booksModel->getAll();
+		if (isset($_GET['page'])) {
+			$page = intval($_GET['page']);
+		} else {
+			$page = 1;
+		}
+		$pageCount = $booksModel->getPageCount();
+		$books = $booksModel->getPageBooks($page);
 		$view = new ViewsBooks();
-		$view->display($books, $author, $genre);
+		$view->display($books, $pageCount, $page);
 	}
 
 	public function book($id) {
 		$bookModel = new ModelsBook();
 		$book = $bookModel->get($id);
-		$author = $bookModel->getAuthors($id);
+		$authors = $bookModel->getAuthors($id);
 		$genre = $bookModel->getGenre($id);
 		$view = new ViewsBook();
-		$view->display($book, $author, $genre);
+		$view->display($book, $authors, $genre);
 	}
 }

@@ -1,9 +1,11 @@
 <?php
 class Config {
-	public static $dbServerName = "localhost";
-	public static $dbName = "nfq_library";
-	public static $dbUserName = "root";
-	public static $dbPassword = "root";
+	public static 
+		$dbServerName = "localhost", 
+		$dbName = "nfq_library",
+		$dbUserName = "root",
+		$dbPassword = "root",
 
-	public static $templateName = "default";
+		$templateName = "default",
+		$booksPerPage = 5;
 }

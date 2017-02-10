@@ -11,11 +11,14 @@ class ModelsBook
 
 	public function getAuthors($id) {
 		$sql = 'SELECT author_id FROM book_author WHERE book_id ='.intval($id);
-		$authorId = Db::selectOne($sql);
+		$authorIds = Db::select($sql);
 		$modelsAuthor = new ModelsAuthor();
-		$author = $modelsAuthor->get($authorId['author_id']);
+		$authors = array();
+		foreach ($authorIds as $authorId) {
+			$authors[] = $modelsAuthor->get($authorId['author_id']);
+		}
 		// $sql = 'SELECT id, fisrt_name, last_name FROM authors WHERE id='.intval($id);
-		return $author;
+		return $authors;
 	}
 
 	public function getGenre($id) {

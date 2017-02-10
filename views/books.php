@@ -1,7 +1,7 @@
 <?php
 class ViewsBooks
 {
-	public function display($books, $author, $genre) {
+	public function display($books, $pageCount, $currentPage) {
 		include('templates/'.Config::$templateName.'/books.php');
 	}
 }
