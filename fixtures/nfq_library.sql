@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Feb 10, 2017 at 10:07 AM
+-- Generation Time: Feb 12, 2017 at 09:23 PM
 -- Server version: 5.6.34
 -- PHP Version: 7.1.0
 
@@ -77,7 +77,27 @@ INSERT INTO `authors` (`id`, `last_name`, `first_name`) VALUES
 (47, 'Sokas', 'Algirdas'),
 (48, 'Laucius', 'Juozas'),
 (49, 'Vasilecas', 'Olegas'),
-(50, 'Saulis', 'Algis');
+(50, 'Saulis', 'Algis'),
+(51, 'Irawan', 'Budi'),
+(52, 'Luis', 'Atencio'),
+(53, 'Bierer', 'Doug'),
+(54, 'Holywell', 'Simon'),
+(55, 'Palala', 'Jose'),
+(56, 'Helmich', 'Martin'),
+(57, 'Bierer', 'Doug'),
+(58, 'Hussain', 'Altaf'),
+(59, 'Ajzele', 'Branko'),
+(60, 'Lively', 'Michael'),
+(61, 'Ajzele', 'Branko'),
+(62, 'Panati', 'Manikanta'),
+(63, 'Dickinson', 'Duncan'),
+(64, 'Rossel', 'Sander'),
+(65, 'Kormanik', 'Katie'),
+(66, 'Roberto ', 'José '),
+(67, 'Mendoza', 'Olivas'),
+(68, 'de la Torre', 'Cesar '),
+(69, 'Lelli', 'Giancarlo'),
+(70, 'Bartyzel', 'Michał');
 
 -- --------------------------------------------------------
 
@@ -130,7 +150,24 @@ INSERT INTO `books` (`id`, `name`, `year`) VALUES
 (42, 'Grafikos programavimas VBA kalba', 2006),
 (43, 'Grafinių objektų ir informacijos valdymas VBA kalba', 2007),
 (44, 'Informacinių sistemų projektų ir kokybės valdymas', 2008),
-(45, 'Informacinių sistemų projektavimo metodai', 2008);
+(45, 'Informacinių sistemų projektavimo metodai', 2008),
+(46, 'Getting Started with PHP 7', 2017),
+(47, 'Functional PHP 7', 2017),
+(48, 'PHP 7 Programming Solutions', 2016),
+(49, 'Functional Programming in PHP', 2016),
+(50, 'PHP 7 Programming Blueprints', 2016),
+(51, 'PHP 7: Real World Application Development', 2016),
+(52, 'PHP Projects', 2016),
+(53, 'Modular Programming with PHP 7', 2016),
+(54, 'Keystone.js Succinctly', 2017),
+(55, 'Groovy Succinctly', 2017),
+(56, 'SQL Server for C# Developers Succinctly', 2016),
+(57, 'DevOps for Digital Leaders', 2016),
+(58, 'Foundational and Computational Statistics Succinctly', 2016),
+(59, 'Ubuntu Server Succinctly', 2016),
+(60, 'Containerized Docker Applications Lifecycle with Microsoft Tools and Platform', 2016),
+(61, '.NET Core Succinctly', 2016),
+(62, 'Conversation Patterns for Software Professionals', 2016);
 
 -- --------------------------------------------------------
 
@@ -191,7 +228,29 @@ INSERT INTO `book_author` (`book_id`, `author_id`) VALUES
 (44, 48),
 (44, 49),
 (45, 49),
-(45, 50);
+(45, 50),
+(46, 51),
+(47, 52),
+(48, 53),
+(49, 54),
+(50, 55),
+(50, 56),
+(51, 57),
+(51, 58),
+(51, 59),
+(52, 60),
+(53, 61),
+(13, 11),
+(54, 62),
+(55, 63),
+(56, 64),
+(57, 64),
+(58, 65),
+(59, 67),
+(59, 66),
+(60, 68),
+(61, 69),
+(62, 70);
 
 -- --------------------------------------------------------
 
@@ -243,7 +302,24 @@ INSERT INTO `book_genre` (`book_id`, `genre_id`) VALUES
 (42, 16),
 (43, 16),
 (44, 13),
-(45, 13);
+(45, 13),
+(46, 17),
+(47, 17),
+(48, 17),
+(49, 17),
+(50, 17),
+(51, 17),
+(52, 17),
+(53, 17),
+(54, 3),
+(55, 18),
+(56, 19),
+(57, 20),
+(58, 15),
+(59, 21),
+(60, 22),
+(61, 23),
+(62, 24);
 
 -- --------------------------------------------------------
 
@@ -274,7 +350,15 @@ INSERT INTO `genres` (`id`, `name`) VALUES
 (13, 'Informatika'),
 (14, 'C++'),
 (15, 'Programavimas'),
-(16, 'VBA');
+(16, 'VBA'),
+(17, 'PHP'),
+(18, 'Groovy'),
+(19, 'SQL'),
+(20, 'DevOps'),
+(21, 'Ubuntu'),
+(22, 'Microsoft'),
+(23, '.NET\\r\\n'),
+(24, 'IT');
 
 --
 -- Indexes for dumped tables
@@ -320,17 +404,17 @@ ALTER TABLE `genres`
 -- AUTO_INCREMENT for table `authors`
 --
 ALTER TABLE `authors`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
 --
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=63;
 --
 -- AUTO_INCREMENT for table `genres`
 --
 ALTER TABLE `genres`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
 -- Constraints for dumped tables
 --
