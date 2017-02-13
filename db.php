@@ -26,9 +26,7 @@ class Db {
 		}
 
 	}
-
-
-
+	
 	public static function select($sql, $bindParams = false) {
 		if (!self::$dbh) self::connect();
 		$sth = self::$dbh->prepare($sql);

@@ -7,5 +7,5 @@ class Config {
 		$dbPassword = "root",
 
 		$templateName = "default",
-		$booksPerPage = 5;
+		$booksPerPage = 10;
 }
